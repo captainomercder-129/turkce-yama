@@ -12,6 +12,7 @@ add_library(${PROJECT_NAME} SHARED ${SOURCES})
 if (NOT DEFINED ENV{GEODE_SDK})
     message(FATAL_ERROR "GEODE_SDK ortam degiskeni tanimli degil")
 endif()
+add_compile_definitions(FMT_CONSTEVAL=)
 add_subdirectory($ENV{GEODE_SDK} ${CMAKE_CURRENT_BINARY_DIR}/geode)
 
 setup_geode_mod(${PROJECT_NAME})
